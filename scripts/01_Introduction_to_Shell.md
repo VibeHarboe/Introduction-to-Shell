@@ -220,15 +220,55 @@ In real-world data projects, it’s common to rename files to keep your workspac
 Imagine you're working on a dataset of seasonal metrics stored in your ```seasonal/``` directory. To version or back up your original file, you can rename ```winter.csv``` to ```winter.csv.bck``` before running a data cleaning script. This way, you always have a backup of the raw input.
 
 ```
-# Go to the data folder
-cd seasonal
+# Move into the directory with my seasonal data
+```cd seasonal
 
-# Rename the file for backup/versioning
+# Rename the file as a backup
 mv winter.csv winter.csv.bck
 
-# Confirm the new file name is present
+# Check that the file was renamed
 ls
 ```
 
-### Tip:
-The ```mv``` command will overwrite any existing file called ```winter.csv.bck``` – so always double-check before running it! 
+### Result:
+This renames ```winter.csv``` to ```winter.csv.bck``` (overwriting any previous backup). The workflow is much faster, scriptable, and reproducible—perfect for version-controlling datasets in data projects. 
+
+---
+
+# 🗂️ Creating and Deleting Directories in a Real Data Workflow
+When organizing your project folders and files, it's essential to efficiently manage directories—just as you would in any complex data or codebase structure.
+
+### Why does this matter?
+If you’re setting up a new data pipeline, archiving previous results, or simply tidying up your workspace, you need to know how to:
+
+* Remove files and folders you no longer need
+* Create new directories for new data or analyses
+* Keep your workspace clean and logically structured
+
+## 💡 Example Workflow
+### 1. Delete a file from a directory without leaving your current location
+
+```rm people/agarwal.txt```
+
+*Removes a file you don’t need anymore, freeing up space and keeping things organized.*
+
+### 2. Delete an empty directory
+
+```rmdir people```
+
+*Useful when a folder is no longer needed after its files have been removed.*
+
+### 3. Create a new directory for annual data
+
+```mkdir yearly```
+
+*Perfect for separating projects or datasets by year, making historical tracking and archiving easier.*
+
+### 4. Create subfolders for specific years or categories
+
+```mkdir yearly/2017```
+
+*You can create nested directories in one go, helping you keep your file system clear and hierarchical.*
+
+### 🧩 Tip: 
+Use ```rmdir``` only on empty directories, or ```rm r``` for directories with content—but always double-check before deleting folders recursively!
