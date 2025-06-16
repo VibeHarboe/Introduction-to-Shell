@@ -196,3 +196,17 @@ If I need to back up multiple files at once, I can do:
 
 ### Why is this useful?
 💡 Using the shell, I can automate file management for reporting, reproducibility, and version control—critical for effective data operations and collaboration.
+
+---
+
+# 🚚 Moving Files Efficiently with mv
+In my daily work as a Data Analyst, it's often necessary to reorganize project directories—especially when preparing datasets for analysis or archiving old results. For example, I might need to move raw data files from an "incoming" folder to a structured backup location after they’ve been processed.
+
+## 💡 Real-world scenario:
+Suppose I have a project directory ```/home/repl/``` with two subdirectories, ```seasonal``` (storing data by season) and ```backup``` (for archiving copies). After analyzing seasonal datasets like ```spring.csv``` and ```summer.csv```, I want to move them to the ```backup``` folder in one go.
+
+Shell command:
+
+```mv seasonal/spring.csv seasonal/summer.csv backup```
+
+This command moves both files from the ```seasonal``` directory into the ```backup``` folder in a single, efficient operation—helping keep my workspace organized and my workflows smooth. 
