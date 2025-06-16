@@ -16,6 +16,3 @@ Think of the shell and the file explorer as two different "languages" for commun
   - `./app.sh` = run a script or program
 
 ---
-
-# 🎯 Why this matters for Data Analysts:
-Knowing both gives you flexibility. You can automate, batch process, and script operations in a way that GUIs can’t – crucial for data pipelines.
