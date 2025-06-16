@@ -272,3 +272,6 @@ If you’re setting up a new data pipeline, archiving previous results, or simpl
 
 ### 🧩 Tip: 
 Use ```rmdir``` only on empty directories, or ```rm r``` for directories with content—but always double-check before deleting folders recursively!
+
+---
+
