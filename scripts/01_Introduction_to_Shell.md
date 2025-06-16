@@ -270,8 +270,8 @@ If you’re setting up a new data pipeline, archiving previous results, or simpl
 
 *You can create nested directories in one go, helping you keep your file system clear and hierarchical.*
 
-### 🧩 Tip: 
-Use ```rmdir``` only on empty directories, or ```rm r``` for directories with content—but always double-check before deleting folders recursively!
+> Tip: 
+> Use ```rmdir``` only on empty directories, or ```rm r``` for directories with content—but always double-check before deleting folders recursively!
 
 ---
 
