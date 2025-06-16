@@ -176,3 +176,23 @@ You end up in ```/home```.
 Mastering quick navigation commands like ```cd ..```, ```cd ~```, and their combinations saves you time and reduces errors in complex directory structures—especially in collaborative projects or when managing multiple data environments. 
 
 ---
+
+# 🗂️ Copying Files Efficiently with the Shell
+
+As part of my daily workflow as a data analyst, I often need to organize, back up, and version data files to ensure nothing gets lost or overwritten by accident. The Unix shell offers the ```cp``` command, which is a reliable way to quickly copy files or entire groups of files between directories.
+
+## 💡 Scenario:
+Suppose I am managing seasonal sales data stored as separate CSV files for each quarter. To create a backup before running transformations, I use:
+
+```cp seasonal/summer.csv backup/summer.bck```
+
+* This copies ```summer.csv``` from the ```seasonal``` directory into the ```backup``` directory and renames it ```summer.bck```.
+
+If I need to back up multiple files at once, I can do:
+
+```cp seasonal/spring.csv seasonal/summer.csv backup/```
+
+* Here, both ```spring.csv``` and ```summer.csv``` are copied into the ```backup``` directory in a single command, saving time and reducing manual errors.
+
+### Why is this useful?
+💡 Using the shell, I can automate file management for reporting, reproducibility, and version control—critical for effective data operations and collaboration.
