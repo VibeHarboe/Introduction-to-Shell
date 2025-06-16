@@ -4,7 +4,7 @@ This chapter introduces the Unix shell, its practical relevance for modern data 
 
 ---
 
-## 💡 Real-world context:
+# 💡 Real-world context:
 Think of the shell and the file explorer as two different "languages" for communicating with your computer. Both ultimately control the same underlying processes – they just do so differently.
 
 ## File explorer (GUI):
