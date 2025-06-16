@@ -19,13 +19,15 @@ Think of the shell and the file explorer as two different "languages" for commun
 
 ---
 
-# 🎯 Why this matters for Data Analysts:
+# 🎯 Why this matters for Data Analysts
 Knowing both gives you flexibility. You can automate, batch process, and script operations in a way that GUIs can’t – crucial for data pipelines.
 
 
 ---
 
-## Exercise 1: Shell vs. Desktop Interface
+# Scripts & Exercises
+
+## 🖥️ Shell vs. Desktop Interface
 
 **Prompt:**  
 An operating system like Windows, Linux, or Mac OS is a special kind of program. It controls the computer's processor, hard drive, and network connection, but its most important job is to run other programs.  
@@ -38,4 +40,21 @@ Users need an interface to communicate with the OS – either a graphical file e
 > They are both interfaces for issuing commands to the operating system.
 
 ---
+
+## 📂 Where am I? (pwd)
+
+The filesystem manages files and directories, each identified by an absolute path.
+
+Example: ```/home/repl``` is the directory repl inside the directory home.
+
+```/home/repl/course.txt``` is a file called course.txt inside that directory.
+
+/ on its own is the root directory.
+
+To find your current location in the filesystem, use the command:
+```
+pwd
+
+```
+```pwd``` stands for "print working directory" and prints the absolute path of your current working directory—where the shell runs commands and looks for files by default.
 
