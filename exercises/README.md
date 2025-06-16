@@ -1,7 +1,4 @@
-# Overview
-This chapter introduces the Unix shell as a foundational tool for interacting with the operating system. You'll learn the value of typing commands over using graphical interfaces, and how these skills enable you to automate and streamline your work as a data analyst.
-
-## 💡 Real-world context:
+# 💡 Real-world context:
 Think of the shell and the file explorer as two different "languages" for communicating with your computer. Both ultimately control the same underlying processes – they just do so differently.
 
 ---
