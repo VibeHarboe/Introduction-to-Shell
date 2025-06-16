@@ -39,15 +39,15 @@ Use the shell to confirm your current working directory.
 Command:
 
 bash
-Kopiér
-Rediger
+
 pwd
+
 Example Output:
 
 bash
-Kopiér
-Rediger
+
 /home/repl
+
 Explanation:
 The pwd command ("print working directory") returns the absolute path of your current location in the file system. In this case, you are inside the repl user directory, under /home.
 
