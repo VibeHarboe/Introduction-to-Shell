@@ -210,3 +210,25 @@ Shell command:
 ```mv seasonal/spring.csv seasonal/summer.csv backup```
 
 This command moves both files from the ```seasonal``` directory into the ```backup``` folder in a single, efficient operation—helping keep my workspace organized and my workflows smooth. 
+
+---
+
+# 🔄 Renaming Files for Better Project Structure
+In real-world data projects, it’s common to rename files to keep your workspace organized, clarify versions, or follow naming conventions for reproducibility. For instance, if you receive raw data exports named ```winter.csv```, you might want to rename them before archiving or processing.
+
+## 💡 Example Workflow
+Imagine you're working on a dataset of seasonal metrics stored in your ```seasonal/``` directory. To version or back up your original file, you can rename ```winter.csv``` to ```winter.csv.bck``` before running a data cleaning script. This way, you always have a backup of the raw input.
+
+```
+# Go to the data folder
+cd seasonal
+
+# Rename the file for backup/versioning
+mv winter.csv winter.csv.bck
+
+# Confirm the new file name is present
+ls
+```
+
+### Tip:
+The ```mv``` command will overwrite any existing file called ```winter.csv.bck``` – so always double-check before running it! 
