@@ -1,4 +1,4 @@
-# 🗃️ Introduction to Shell – Chapter 2: Manipulating Data
+# 🗃️ Introduction to Shell: Manipulating Data
 
 ### **Theme:**  
 While the first chapter focused on moving and organizing files and directories, this chapter is all about **working with the data inside those files**. Here, I use essential shell tools to search, filter, extract, and transform data efficiently—crucial skills for data analytics, automation, and reporting.
@@ -73,4 +73,35 @@ head will simply display as many lines as are available in the file – no error
 > When exploring unfamiliar datasets, this technique lets me quickly understand what fields are present and spot data quality issues before investing time in deeper analysis.
 
 ---
+
+# 🚀 Efficient Navigation: Using Tab Completion in the Shell
+When working with large directories or numerous files, typing out full file or directory names every time is both time-consuming and error-prone. In real-world data projects, speed and accuracy matter—especially when you’re wrangling dozens af CSV’er eller scripts i din daglige arbejdsgang.
+
+### Solution:
+The shell’s **tab completion** lets you quickly and safely auto-complete file and folder names. Just start typing, hit ```Tab```, and let the shell fill in the rest!
+
+### Example Scenario
+Suppose you’re exploring seasonal dental data and want to look at ```autumn.csv``` and ```spring.csv``` in your seasonal folder. Instead of typing the full path:
+
+```
+head seasonal/autumn.csv
+head seasonal/spring.csv
+```
+You can type:
+
+```
+head sea[TAB]a[TAB]
+head sea[TAB]s[TAB]
+```
+
+… and the shell will auto-complete to ```seasonal/autumn.csv``` and ```seasonal/spring.csv``` for you.
+
+If the prefix is ambiguous (e.g., ```seasonal/s[TAB]```), hit ```Tab``` again to see all possible completions and pick the right file.
+
+### Takeaway:
+Tab completion isn’t just for convenience—it prevents typos, speeds up navigation, and lets you focus on data insights instead of repetitive typing.
+💡 *Always leverage tab completion for faster, error-free work in the shell!*
+
+---
+
 
