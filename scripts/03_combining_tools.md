@@ -209,4 +209,30 @@ Mastering wildcards helps automate repetitive tasks, improves precision in file 
 
 ---
 
+# 🔀 Sorting Output in Real-World Shell Data Tasks
+Sorting data efficiently is a key part of real-world data workflows, whether you’re cleaning up CSVs, organizing logs, or preparing data for analysis. In the shell, the ```sort``` command makes this easy and powerful.
+
+### 📌 Real-World Scenario
+Suppose you want to list all unique tooth names from a dental dataset and see them in reverse alphabetical order – for example, to check which types are present or to prepare for frequency analysis. Here’s how you’d do it:
+
+```cut -d , -f 2 seasonal/winter.csv | grep -v Tooth | sort -r```
+
+* ```cut -d , -f 2 seasonal/winter.csv``` selects the second column (tooth type) from your CSV file.
+* ```grep -v Tooth``` removes the header row (anything matching "Tooth").
+* ```sort -r``` sorts the output in reverse (descending) alphabetical order.
+
+### 🏆 Result:
+This pipeline lists all tooth types from your winter dataset, sorted from Z to A. This is a common real-world task when validating categorical data, prepping values for encoding, or generating reports.
+
+### 💡 Tip:
+> The ```sort``` command has useful flags:
+* ```-n``` for numerical sort
+* ```-r``` for reverse order
+* ```-b``` to ignore leading blanks
+* ```-f``` for case-insensitive sorting
+
+Combine with ```uniq``` for deduplication, or add ```head/tail``` for top/bottom values!
+
+---
+
 #
