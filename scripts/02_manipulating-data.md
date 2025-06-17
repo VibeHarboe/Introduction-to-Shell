@@ -75,7 +75,7 @@ head will simply display as many lines as are available in the file – no error
 ---
 
 # 🚀 Efficient Navigation: Using Tab Completion in the Shell
-When working with large directories or numerous files, typing out full file or directory names every time is both time-consuming and error-prone. In real-world data projects, speed and accuracy matter—especially when you’re wrangling dozens af CSV’er eller scripts i din daglige arbejdsgang.
+When working with large directories or numerous files, typing out full file or directory names every time is both time-consuming and error-prone. In real-world data projects, speed and accuracy matter—especially when you’re wrangling dozens af CSV’er or scripts in your daily workflows.
 
 ### Solution:
 The shell’s **tab completion** lets you quickly and safely auto-complete file and folder names. Just start typing, hit ```Tab```, and let the shell fill in the rest!
@@ -104,4 +104,23 @@ Tab completion isn’t just for convenience—it prevents typos, speeds up navig
 
 ---
 
+# 🛠️ Fine-tuning Shell Commands with Flags
+In real data projects, standard commands often need to be customized to fit the specific task at hand. That's where command-line flags become invaluable—they allow me to control exactly how much output I get, keeping my workflows efficient and focused.
 
+### Scenario
+Suppose I need to quickly check only the first three lines of a CSV file—maybe to verify column headers or to preview the first few data entries before starting a larger analysis. With the ```head``` command, I can easily adjust how many lines I see by using the ```-n``` flag:
+
+```head -n 3 seasonal/summer.csv```
+
+Want to see more or fewer lines? Just change the number:
+
+```head -n 100 seasonal/summer.csv```
+
+### Why is this important?
+
+* I avoid unnecessary scrolling and cluttered output
+* It lets me debug data imports or scripts efficiently
+* When automated in scripts, it keeps logs clean and easy to review
+
+### 🔑 Best practice:
+> Always put flags (like ```-n```) before filenames for clarity and portability. This ensures that your commands work consistently across different Unix environments.
