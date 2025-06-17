@@ -76,3 +76,31 @@ This workflow lets you build flexible, repeatable data pipelines without manual 
 
 ---
 
+# 🧩 Combining Commands Efficiently with Pipes
+In real-world data projects, it's common to transform and filter data in several steps. If you use intermediate files for each step (e.g., ```top.csv```), you quickly end up with a messy workspace and a fragmented workflow. To keep things efficient and reproducible, you should combine commands with pipes.
+
+### 🚀 Why use pipes?
+* Cleaner workflow: Avoids creating temporary files like ```step1.csv```, ```step2.csv```, etc.
+* Readability: Keeps the entire transformation in a single, readable line.
+* Performance: Reduces disk I/O and clutter.
+
+### Example: Filtering data without intermediate files
+Let’s say you want to extract all tooth types from column 2 in seasonal/summer.csv, but want to exclude rows with the word "Tooth" in the header.
+
+Instead of:
+```
+cut -d , -f 2 seasonal/summer.csv > teeth.csv
+grep -v Tooth teeth.csv
+```
+
+You can do it all in one step using a pipe:
+
+```cut -d , -f 2 seasonal/summer.csv | grep -v Tooth```
+
+This way, ```cut``` sends its output directly to ```grep```, which filters out the unwanted rows—no need to save intermediate files!
+
+> 💡 Tip:
+> Pipes (```|```) are the backbone of efficient shell workflows. They help you chain together powerful, single-purpose tools into robust, automated data wrangling pipelines—perfect for analytics and reporting tasks.
+
+---
+
