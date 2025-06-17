@@ -231,3 +231,65 @@ $ cut -d , -f 1 spring.csv
 💡 > *Pro tip: Use ```cut``` to streamline data wrangling before loading files into more complex analytics tools!*
 
 ---
+
+# 🛠️ Limitation: What Can’t ```cut``` Do? (And Why Does It Matter?)
+When working with delimited data in the shell, the ```cut``` command is often used for fast column extraction. But it has some important limitations you need to be aware of in real-world data workflows.
+
+### 💡 Real-World Scenario
+Suppose you receive a CSV file containing:
+
+```
+Name,Age
+"Johel,Ranjit",28
+"Sharma,Rupinder",26
+```
+
+If you try to extract the age column using:
+
+```cut -f 2 -d , everyone.csv```
+
+You don’t get the correct ages, because ```cut``` simply treats every comma as a separator. Quoted fields (like ```"Johel,Ranjit"```) are not handled correctly. The result is:
+
+```
+Age
+Ranjit"
+Rupinder"
+```
+
+*The tool splits inside the quotes, giving you the wrong columns.*
+
+### 🛠️ Command Example: Fields With a Trailing Separator
+
+If you run:
+
+```echo 'first:second:third:' | cut -d : -f 2-4```
+
+The output is:
+
+```second:third:```
+
+Notice: Because of the trailing colon, there’s an “empty” fourth field, but only the second and third are present.
+
+### Takeaway:
+```cut``` is fast, but only works well for simple, consistently-formatted delimited data. For robust parsing—especially with quoted text—use tools like ```awk```, ```csvkit```, or Python’s ```csv``` module.
+
+💡 *Know your tool’s limits: use ```cut``` for speed, but switch to more powerful parsing when needed!*
+
+---
+
+⏪ Efficient Command Repetition in the Shell
+One of the biggest productivity hacks for data professionals is learning how to repeat and re-use commands in the shell. Repetition is not just about speed—it's about reducing errors, working efficiently, and automating your workflow.
+
+📝 Problem: Running the Same Data Task Repeatedly
+You often need to re-run the same command, maybe after tweaking a script, fixing a typo, or applying a process to different files (e.g., viewing or cleaning similar CSVs). Manually re-typing commands wastes time and increases the risk of mistakes.
+
+⚡️ Solution: Shell History & Command Re-run Shortcuts
+Arrow keys: Use the up-arrow to cycle through your command history, edit as needed, and press Enter to re-run.
+
+history command: Run history to see a list of your previous commands—each with a unique number.
+
+Repeat by number: To instantly re-run, say, the 3rd command in your history, type !3.
+
+Repeat by name: To re-run your most recent use of a specific command (e.g., head), type !head.
+
+Example Workflow
