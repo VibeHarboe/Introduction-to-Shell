@@ -18,3 +18,29 @@ This command prints the full content of ```course.txt``` to the screen, allowing
 
 ---
 
+# 📖 Paging Through Large Files with less
+When I work with large datasets, log files, or configuration files, it’s not practical to print the entire file to the terminal using ```cat``` — especially if the file is hundreds eller thousands of lines. That’s where the ```less``` command becomes indispensable.
+
+## 🛠️ Real-World Example
+Suppose I’m debugging a complex ETL pipeline, and need to quickly scan the first few pages of a long log file:
+
+```less logs/pipeline.log```
+
+* Press ```spacebar``` to page down,
+* Press ```b``` to page up,
+* Type ```q``` to quit when done.
+
+If I want to review several files (for example, multiple job logs), I can open them all at once:
+
+```less logs/job1.log logs/job2.log```
+
+* Type ```:n``` to go to the next file,
+* Type ```:p``` to return to the previous file.
+
+### Why use ```less```?
+
+* It saves time (no need to scroll up and down endlessly),
+* It makes it easy to search with ```/``` (just like in Vim),
+* It’s essential for troubleshooting on remote servers where text editors aren’t available.
+
+---
