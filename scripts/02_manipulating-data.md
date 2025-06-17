@@ -277,19 +277,32 @@ Notice: Because of the trailing colon, there’s an “empty” fourth field, bu
 
 ---
 
-⏪ Efficient Command Repetition in the Shell
-One of the biggest productivity hacks for data professionals is learning how to repeat and re-use commands in the shell. Repetition is not just about speed—it's about reducing errors, working efficiently, and automating your workflow.
+# ⏪ Efficient Command Repetition in the Shell
+One of the biggest productivity hacks for data professionals is learning how to repeat and re-use commands in the shell. Repetition is not just about speed — it's about reducing errors, working efficiently, and automating your workflow.
 
-📝 Problem: Running the Same Data Task Repeatedly
+### 📝 Problem: Running the Same Data Task Repeatedly
 You often need to re-run the same command, maybe after tweaking a script, fixing a typo, or applying a process to different files (e.g., viewing or cleaning similar CSVs). Manually re-typing commands wastes time and increases the risk of mistakes.
 
-⚡️ Solution: Shell History & Command Re-run Shortcuts
-Arrow keys: Use the up-arrow to cycle through your command history, edit as needed, and press Enter to re-run.
+### ⚡️ Solution: Shell History & Command Re-run Shortcuts
+* **Arrow keys:** Use the up-arrow to cycle through your command history, edit as needed, and press Enter to re-run.
+* ```history``` **command:** Run ```history``` to see a list of your previous commands — each with a unique number.
+* **Repeat by number:** To instantly re-run, say, the 3rd command in your ```history```, type ```!3```.
+* **Repeat by name:** To re-run your most recent use of a specific command (e.g., ```head```), type ```!head```.
 
-history command: Run history to see a list of your previous commands—each with a unique number.
+### Example Workflow:
+```
+head summer.csv         # Oops, wrong directory!
+cd seasonal
+!head                   # Instantly re-run the previous 'head' command
+history                 # See all recent commands with line numbers
+!4                      # Re-run the 4th command from the history
+```
 
-Repeat by number: To instantly re-run, say, the 3rd command in your history, type !3.
+### 💡 Takeaway
+Learning to **repeat and re-run commands** with ```!``` and ```history``` lets you move lightning-fast—no more copy-paste or re-typing! This is a must-have trick for anyone automating analytics or wrangling lots of data files in Bash.
 
-Repeat by name: To re-run your most recent use of a specific command (e.g., head), type !head.
+### **Pro tip:** 
+Combine with search (Ctrl+R) and editing to turn your shell into a powerful, error-free productivity tool. 🚀
 
-Example Workflow
+---
+
