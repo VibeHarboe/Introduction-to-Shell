@@ -306,3 +306,35 @@ Combine with search (Ctrl+R) and editing to turn your shell into a powerful, err
 
 ---
 
+# 🔎 Filtering Data Efficiently: Using ```grep``` for Line Selection
+In real-world data analytics projects, you often need to filter out only the relevant records from large datasets. The shell’s ```grep``` command is a lightning-fast way to extract lines that contain specific values, patterns, or exclude unwanted results entirely. Here are a few hands-on, practical scenarios:
+
+## 🧩 Scenario 1: Find All Matching Lines
+Suppose you’re working with a dataset on dental treatments and want to find all autumn records containing the word ```molar```:
+
+```grep molar seasonal/autumn.csv```
+
+This command prints every line in ```autumn.csv``` where “molar” appears.
+
+## 🧩 Scenario 2: Exclude Matches & Show Line Numbers
+What if you need to analyze spring data, but want to exclude all ```molar``` treatments and also see the line numbers? The ```-v``` flag inverts the match, and ```-n``` includes line numbers:
+
+```grep -v -n molar seasonal/spring.csv```
+
+This command lists every line (with its number) in ```spring.csv``` that does not contain “molar.”
+
+## 🧩 Scenario 3: Count Occurrences Across Multiple Files
+If you need to count how many times a specific value appears — say, how often “incisor” is recorded across autumn and winter datasets—use the ```-c``` flag for count:
+
+```grep -c incisor seasonal/autumn.csv seasonal/winter.csv```
+
+This outputs the number of lines in each file that contain the word “incisor,” helping you quantify cases quickly across multiple datasets.
+
+### Why This Matters
+Filtering, excluding, and counting values is core to any data workflow: from QA checks to building pipeline steps or summarizing data for dashboards. Mastering ```grep``` saves hours when parsing logs, CSVs, or any structured text files.
+
+### 💡 Tip: 
+*Chain ```grep``` with other shell tools (like ```cut``` or ```sort```) for even more powerful data wrangling on the fly!*
+
+---
+
