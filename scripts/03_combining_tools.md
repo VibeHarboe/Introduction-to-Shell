@@ -235,4 +235,32 @@ Combine with ```uniq``` for deduplication, or add ```head/tail``` for top/bottom
 
 ---
 
-#
+# 🔄 Removing Duplicate Lines in Shell Pipelines
+When working with real-world datasets, it’s common to encounter duplicate entries—especially after merging data from multiple sources or performing data transformation steps. In the shell, removing duplicates is essential for accurate summaries and reporting.
+
+### 🌏 Real-World Task: Summarizing Unique Tooth Types
+Suppose you have a CSV file with dental data and want to know how many times each unique tooth type appears (excluding headers and the word "Tooth"). Here’s an efficient pipeline to do just that:
+
+```cut -d , -f 2 seasonal/winter.csv | grep -v Tooth | sort | uniq -c```
+
+### What’s happening here?
+1. ```cut -d , -f 2 seasonal/winter.csv```
+   → Extracts the second column (tooth names) from the CSV.
+  
+2. ```grep -v Tooth```
+   → Removes the header line containing the word "Tooth".
+  
+3. ```sort```
+   → Sorts the tooth names alphabetically, grouping duplicates together.
+  
+4. ```uniq -c```
+   → Removes adjacent duplicates and prints a count of each unique tooth type.
+
+### 💡 Why use ```sort | uniq```?
+```uniq``` only removes adjacent duplicate lines. That's why sorting is crucial before using ```uniq```, to make sure identical entries are grouped together.
+
+### 🎯 Result:
+You get a count of each unique tooth name, ready for quick analysis or reporting—no matter the original order or repetition in your raw data.
+
+---
+
