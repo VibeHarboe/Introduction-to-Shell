@@ -43,7 +43,7 @@ Imagine you’re working on a dental research project, and you need to extract j
 * **Error tracking:** Keep logs and outputs for troubleshooting or documentation.
 * **Data hand-off:** Easily share results with collaborators, or move them between systems.
 
-> 💡 Tip:
+#### 💡 Tip:
 > Output redirection (```>```) works with nearly every shell command—making it a core part of any data analyst’s toolkit!
 
 ---
@@ -71,7 +71,7 @@ Combine basic commands with redirection and use one command’s output as the ne
 ### Why does this matter?
 This workflow lets you build flexible, repeatable data pipelines without manual editing or heavy scripting. You can chain as many commands as you need to filter, clean, and extract only the data you need.
 
-> 💡 Pro tip:
+#### 💡 Tip:
 > This pattern—combining ```head```, ```tail```, and redirection—is widely used in real data operations, especially for log analysis, automated quality checks, and pipeline validation.
 
 ---
@@ -99,8 +99,27 @@ You can do it all in one step using a pipe:
 
 This way, ```cut``` sends its output directly to ```grep```, which filters out the unwanted rows—no need to save intermediate files!
 
-> 💡 Tip:
+#### 💡 Tip:
 > Pipes (```|```) are the backbone of efficient shell workflows. They help you chain together powerful, single-purpose tools into robust, automated data wrangling pipelines—perfect for analytics and reporting tasks.
 
 ---
 
+# 🔗 Chaining Shell Commands for Data Extraction
+In real-world data analysis, you often need to filter, clean, and select data in one seamless operation—not as separate steps. Instead of writing temporary files for each step, you can chain multiple commands with pipes (```|```) to make your workflow faster, cleaner, and more reproducible.
+
+### 💡 Scenario:
+Suppose you need to extract a specific value from a CSV dataset:
+* You want all tooth types except those labeled "Tooth" (header) from ```seasonal/summer.csv```.
+* Finally, you want to return only the very first value found.
+
+Efficient one-liner:
+
+```cut -d , -f 2 seasonal/summer.csv | grep -v Tooth | head -n 1```
+
+### How it works:
+* ```cut -d , -f 2 seasonal/summer.csv```: Extracts the second column (tooth types) from the file.
+* ```grep -v Tooth```: Removes lines containing the word "Tooth" (skipping the header).
+* ```head -n 1```: Returns only the first tooth type found in the filtered data.
+
+### 🎯 Business value:
+This chaining technique means you can instantly get targeted results—no manual cleaning, no temp files—boosting your speed when handling large, messy datasets.
