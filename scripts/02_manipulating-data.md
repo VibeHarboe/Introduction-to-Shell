@@ -196,4 +196,38 @@ If you don’t know the exact command, try searching Stack Overflow.
 
 ---
 
+# ✂️ Selecting Columns from a File in Real Data Tasks
+When working with large CSV files in data analysis or automation, you’ll often need to extract specific columns—such as timestamps, IDs, or features—for downstream processing or quick checks. The ```cut``` command is a simple, robust way to grab only the data you need without loading the entire file into a spreadsheet or Python script.
 
+### 💡 Real-World Scenario
+Suppose you’re prepping raw sensor data for a machine learning pipeline. The file ```spring.csv``` contains multiple columns, but you only need the first column (e.g., date) to align data from several sources.
+
+### Solution
+The cut command lets you extract specific columns by delimiter. For comma-separated files, the command is:
+
+```cut -d , -f 1 spring.csv```
+
+or equivalently:
+
+```cut -f 1 -d , spring.csv```
+
+Both versions are valid and will output just the first column of ```spring.csv```.
+
+### Terminal Example:
+```
+$ cut -d , -f 1 spring.csv
+# Outputs:
+# 2017-01-25
+# 2017-02-19
+# 2017-02-24
+# ...
+```
+
+### Why this matters
+* **Efficiency:** Instantly preview or extract just the needed fields, even from massive files.
+* **Automation:** Integrate into batch processing or data-cleaning shell scripts.
+* **Flexibility:** Supports a variety of delimiters (```-d```) and custom column selections (```-f```).
+
+💡 > *Pro tip: Use ```cut``` to streamline data wrangling before loading files into more complex analytics tools!*
+
+---
