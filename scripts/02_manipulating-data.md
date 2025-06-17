@@ -192,7 +192,7 @@ And if you want to page through the help text, use spacebar to scroll, and type 
   * Alternatives are separated by ```|```
 
 * **Troubleshooting:**
-If you don’t know the exact command, try searching Stack Overflow.
+If you don’t know the exact command, try searching Stack Overflow or check the “SEE ALSO” section for related commands.
 
 ---
 
