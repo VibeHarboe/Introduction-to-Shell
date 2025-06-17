@@ -150,3 +150,24 @@ This technique saves time and ensures accuracy, especially when checking imports
 
 ---
 
+# 🌟 Handling Multiple Files with Wildcards in the Shell
+When managing real-world data projects, you rarely process a single file at a time. Whether you’re generating monthly reports, transforming batches of CSV exports, or cleaning up server logs, it’s common to apply the same command to many files in a directory.
+
+### 🔍 Example Scenario
+Suppose you want to preview the first three rows from both ```seasonal/spring.csv``` and ```seasonal/summer.csv``` (but not the other seasonal files). Instead of manually typing every filename, use a wildcard (```*```) to automate the task and minimize errors:
+
+  ```head -n 3 seasonal/s*```
+
+* This command returns the top three lines from all files in ```seasonal/``` whose names start with "s" (such as ```spring.csv``` and ```summer.csv```), skipping others like ```autumn.csv``` and ```winter.csv```.
+
+### 🚀 Why Use Wildcards?
+* **Saves time:** No need to type each file name.
+* **Prevents errors:** Avoids missing or duplicating files by mistake.
+* **Scalable:** Works for any number of files—perfect for automation and scripting.
+
+### 💡 Pro tip: 
+> *In large-scale data projects, wildcards make it much easier to scale your processing pipeline and keep your workflow DRY (Don’t Repeat Yourself)!*
+
+---
+
+#
