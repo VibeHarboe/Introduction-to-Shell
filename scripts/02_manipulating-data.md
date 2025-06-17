@@ -338,3 +338,25 @@ Filtering, excluding, and counting values is core to any data workflow: from QA 
 
 ---
 
+# ⚠️ Caution: Treating Data as Plain Text Isn’t Always Safe
+When manipulating tabular data in the shell, tools like ```cut```, ```paste```, or even ```cat``` can seem quick and effective for combining or splitting files. But **data isn’t always just “text”** — and this can cause subtle but critical problems in real analysis.
+
+### 🚩 Real-World Scenario: Combining Datasets with ```paste```
+Suppose you want to combine two CSV files (e.g., ```autumn.csv``` and ```winter.csv```) into a single table, matching rows side by side. You check the manual page for ```paste``` (```man paste```), then run:
+
+```paste -d , seasonal/autumn.csv seasonal/winter.csv```
+
+At first glance, the output looks fine… but:
+
+### 🛑 What’s the Problem?
+> The last few rows have the wrong number of columns.
+
+* If the two files don’t have the same number of lines, ```paste``` simply fills missing values with blanks—leading to misaligned columns, missing values, or malformed rows.
+* Downstream tools (R, Python, SQL, etc.) will often fail or produce misleading results when parsing such files.
+
+### 🎯 Key Takeaway
+* **Text tools don’t “understand” tables.** They only see lines of characters, not rows and columns of structured data.
+* Always check your data’s shape before and after joining or splitting files—especially in automation scripts or batch workflows.
+* For reliable merges, consider using dedicated CSV tools (```csvkit```, ```pandas```, ```awk``` with proper field checks) or at least pre-check line counts with ```wc -l```.
+
+💡 *When in doubt, treat your data as structured—not just as plain text. Robust data wrangling starts here!*
