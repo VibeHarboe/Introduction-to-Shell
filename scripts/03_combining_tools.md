@@ -293,3 +293,25 @@ If you put ```>``` before the pipeline or in the middle, only the first command'
 
 ---
 
+# ⏹️ How to Stop a Running Program in the Shell
+When running shell scripts or commands, most tasks complete quickly. However, some may run for minutes, hours, or even indefinitely—especially if you accidentally start a command that waits for input or hangs due to misused redirection or piping.
+
+In real-world data processing, it’s essential to know how to quickly interrupt or stop a process without closing the entire terminal.
+
+### 🛠️ Practical Solution
+If you ever need to manually halt a command, use the keyboard shortcut:
+
+```Ctrl + C```
+
+This sends a termination signal (```SIGINT```) to the currently running process, stopping it immediately. In UNIX documentation, this is often written as ```^C``` (the caret denotes the control key).
+
+### 📌 Example scenario:
+
+Suppose you run a command that waits indefinitely for input:
+
+```head```
+
+The program will wait for input that never arrives. To stop it, simply press ```Ctrl + C```.
+
+### 💡 Tip: 
+> Use this shortcut any time a command is “stuck,” or you realize you’ve made a mistake—no need to close your terminal!
