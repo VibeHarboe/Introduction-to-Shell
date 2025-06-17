@@ -51,7 +51,7 @@ Imagine you’re working on a dental research project, and you need to extract j
 # 🔁 How to Chain Commands and Use Outputs as Inputs in Shell
 In real-world data work, you’ll often need to extract specific rows or columns—not just from the start or end of files, but from anywhere in your dataset. Shell redirection and chaining commands is a powerful way to do this, especially when working with CSV or log files.
 
-### 🗃️ Scenario: Extracting Specific Lines from a Large Data File
+### 🗃️ Real-World Scenario: Extracting Specific Lines from a Large Data File
 #### **Problem:**
 You need to extract lines 3–5 from a large CSV file (```seasonal/winter.csv```) and save them for downstream processing.
 
@@ -107,7 +107,7 @@ This way, ```cut``` sends its output directly to ```grep```, which filters out t
 # 🔗 Chaining Shell Commands for Data Extraction
 In real-world data analysis, you often need to filter, clean, and select data in one seamless operation—not as separate steps. Instead of writing temporary files for each step, you can chain multiple commands with pipes (```|```) to make your workflow faster, cleaner, and more reproducible.
 
-### 💡 Scenario:
+### 💡 Real-World Scenario:
 Suppose you need to extract a specific value from a CSV dataset:
 * You want all tooth types except those labeled "Tooth" (header) from ```seasonal/summer.csv```.
 * Finally, you want to return only the very first value found.
@@ -123,3 +123,30 @@ Efficient one-liner:
 
 ### 🎯 Business value:
 This chaining technique means you can instantly get targeted results—no manual cleaning, no temp files—boosting your speed when handling large, messy datasets.
+
+---
+
+# 🔢 Counting Records Efficiently with ```wc```
+In everyday data analysis, you often need to quickly check the number of records, lines, or values in a dataset before diving deeper. The Unix command-line utility ```wc``` (word count) is a must-have for this task!
+
+### 💡 Real-World Scenario:
+Suppose you're working with a data file—maybe a CSV of dental visits or logs from a batch job—and need to know exactly how many records you’re dealing with. Instead of opening the file in Excel or scrolling endlessly, use ```wc``` for a one-line answer.
+
+Quick usage:
+
+```wc -l seasonal/summer.csv```
+
+* ```-l``` counts the number of lines (records).
+* Replace with ```-w``` for words or ```-c``` for bytes/characters if needed.
+
+### Example Output
+
+```10 seasonal/summer.csv```
+
+This tells you there are 10 records (lines) in ```summer.csv``` — instantly.
+
+### 🎯 Business value:
+This technique saves time and ensures accuracy, especially when checking imports, validating data loads, or auditing pipeline steps. Fast, simple, and robust!
+
+---
+
