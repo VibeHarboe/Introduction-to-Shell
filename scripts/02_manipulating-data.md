@@ -44,3 +44,33 @@ If I want to review several files (for example, multiple job logs), I can open t
 * It’s essential for troubleshooting on remote servers where text editors aren’t available.
 
 ---
+
+# 👀 Previewing Data Files with ```head```
+### Scenario:
+Before processing new datasets, it's crucial to quickly preview their structure and contents. For instance, when dealing with CSV files exported from databases or spreadsheets, I use the ```head``` command to instantly check the first few rows and validate the data format.
+
+```head seasonal/summer.csv```
+
+### Output Example:
+
+```
+Date,Tooth
+2017-01-11,canine
+2017-01-18,wisdom
+2017-01-21,bicuspid
+2017-02-02,molar
+2017-02-27,wisdom
+2017-02-27,wisdom
+2017-03-07,bicuspid
+2017-03-15,wisdom
+2017-03-20,canine
+```
+
+### What happens if there aren't 10 lines?
+head will simply display as many lines as are available in the file – no errors or blank rows added.
+
+## 💡 Real-World Usage:
+> When exploring unfamiliar datasets, this technique lets me quickly understand what fields are present and spot data quality issues before investing time in deeper analysis.
+
+---
+
