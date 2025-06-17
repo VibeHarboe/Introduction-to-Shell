@@ -58,3 +58,25 @@ Using variables in the shell reduces human error, makes batch processing easier,
 
 ---
 
+# 🔁 Looping over file types: Automating repetitive tasks in the shell
+In this exercise, I’m building my shell automation skills by using loops to process multiple file types—something you often need in real data projects when batch-processing files or generating reports.
+
+### 🌏 Real-world scenario
+Suppose you want to automate processing for a list of file types, such as converting or validating document files. Instead of running a command for each type manually, you can use a loop to repeat your command for every item in the list.
+
+Here’s a shell loop that prints each file type in a given list:
+
+```for filetype in docx odt pdf; do echo $filetype; done```
+
+**Output:**
+```
+docx
+odt
+pdf
+```
+
+### 🎯 Why it matters:
+This approach makes it easy to scale your shell scripts to handle any number of file types or datasets, while keeping your code clean and DRY (Don’t Repeat Yourself). Using loops for automation is one of the most powerful (and overlooked) skills for anyone who wants to level up their shell scripting and batch processing.
+
+---
+
