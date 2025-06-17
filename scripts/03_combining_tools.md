@@ -264,3 +264,32 @@ You get a count of each unique tooth name, ready for quick analysis or reporting
 
 ---
 
+# 💾 How to Save the Output of a Pipe in Shell
+### 💡 Real-world scenario:
+Suppose you’re processing data with a chain of commands, and you want to save the results to a file—without leaving a mess of intermediate files. In shell scripting, you can redirect the output of an entire pipeline directly into a file using the ```>``` operator.
+
+### 🎯 Best practice:
+The redirection operator ```>``` must be placed at the end of the pipeline—not in the middle, and not at the beginning.
+
+#### Example:
+
+```
+# Good practice: Save the result of the pipeline into a file
+cut -d , -f 2 seasonal/*.csv | grep -v Tooth > teeth-only.txt
+```
+
+This command extracts the second column from all CSV files in the "seasonal" folder, removes lines containing "Tooth," and writes the clean list to ```teeth-only.txt```.
+
+```
+# Incorrect: Redirection in the middle or front will break your pipeline!
+cut -d , -f 2 seasonal/*.csv > teeth-only.txt | grep -v Tooth
+> result.txt head -n 3 seasonal/winter.csv
+```
+
+If you put ```>``` before the pipeline or in the middle, only the first command's output is saved, and the rest of the pipeline either waits for input or does nothing.
+
+### 🏆 Takeaway:
+➡️ **Always** place your output redirection at the end of the pipeline to capture the results you need — cleanly, efficiently, and without unnecessary temp files.
+
+---
+
