@@ -241,3 +241,27 @@ When writing scripts or processing files in the shell, I always use underscores 
 
 ### 💡 Tip: 
 > *Always quote your filenames when in doubt!*
+
+---
+
+# 🌀 Looping Over Files: Smart Multi-Command Automation in Bash
+When working with shell scripting, being able to run multiple commands over many files in a single loop is an essential productivity hack. Here’s a real-world example from my training: I built a Bash loop that both prints each filename and extracts a specific line from each CSV data file—no manual repetition needed.
+
+```
+for f in seasonal/*.csv; do
+  echo $f
+  head -n 2 $f | tail -n 1
+done
+```
+
+#### What’s going on here?
+* The loop iterates over all CSV files in the ```seasonal``` folder.
+* For each file, it prints the filename for context.
+* Then, it uses a pipeline (```head -n 2 $f | tail -n 1```) to extract the second line—perfect for processing batch records, logs, or structured data.
+
+### 💡 Key Takeaway
+Combining multiple commands inside a single Bash loop is a superpower for automation—especially when you separate them with semicolons. This is how I streamline repetitive data tasks and minimize manual error, no matter how many files I need to process.
+
+Tips for error prevention:
+* Remember: Every command inside the loop must be separated by a semicolon (```;```).
+* If you forget the semicolon, Bash treats the whole line as a single command and will just echo the literal text—not what you want!
