@@ -42,3 +42,22 @@ This approach keeps my shell workflow fast and flexible, without ever leaving th
 
 ---
 
+# 📝 Capturing Command-Line Workflows with History
+When I run complex analyses in the Unix shell, it’s essential to keep a clear record of the exact commands I’ve used—both for reproducibility and knowledge sharing. Rather than manually jotting down steps in a notebook, I leverage the power of history and standard shell tools.
+
+### 🌏 Real-world scenario:
+Let’s say I want to save the last 10 commands I executed, perhaps as documentation for a project or to troubleshoot a recent workflow. Here’s how I do it:
+
+```history | tail -n 10 > figure-5.history```
+
+This command grabs the last three lines from your shell history and saves them in a text file called ```steps.txt``` for easy reference or sharing.
+
+#### Typical workflow:
+* ```history``` prints the full list of previously executed commands.
+* ```tail -n 10``` extracts the 10 most recent commands.
+* ```> figure-5.history```redirects the output into a file for future reference.
+
+This simple pipeline ensures I never miss a step and that my processes are fully reproducible. This approach demonstrates a key Unix philosophy: combining small, powerful tools to create efficient, auditable workflows.
+
+### 💡 Tip: 
+> *Regularly exporting your shell history helps maintain a transparent, shareable record of your data analyses and automation tasks!*
