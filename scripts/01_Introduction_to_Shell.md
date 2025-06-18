@@ -49,7 +49,7 @@ Example:
 
 ```ls project.csv                     # relative (from /home/user/data) ```
 
-I use both approaches depending on the task, especially in scripts that run automatically (cron jobs, containers).
+*I use both approaches depending on the task, especially in scripts that run automatically (cron jobs, containers).*
 
 ---
 
@@ -58,7 +58,7 @@ I use both approaches depending on the task, especially in scripts that run auto
   * ```cd ..``` to move up one directory
   * ```cd ~``` to return home instantly
 
-These basics make it easy to manage deep project structures and keep data pipelines running smoothly.
+*These basics make it easy to manage deep project structures and keep data pipelines running smoothly.*
 
 ---
 
@@ -69,14 +69,21 @@ Efficient workflows require frequent copying, moving, and renaming:
 
 ```mv raw/data.csv processed/data_v1.csv```
 
-This helps keep track of raw, processed, and archived data in reproducible analytics projects.
+*This helps keep track of raw, processed, and archived data in reproducible analytics projects.*
 
 ---
 
 # 🧹 Directory Creation and Cleanup
 Organizing large code and data projects means:
-  * Creating new folders for each experiment, client, or year: ```mkdir 2024_results```
-  * Deleting obsolete files or empty directories: ```rm oldfile.csv```, ```rmdir empty_folder```
+  * Creating **new folders** for each experiment, client, or year: ```mkdir 2024_results```
+  * Create **subfolders** for specific years or categories: ```mkdir yearly/2017```
+  * **Deleting** obsolete files or empty directories: ```rm oldfile.csv```, ```rmdir empty_folder```
+  * **Moving** files into a **temporary workspace**: ```mv ~/project/data/intermediate-file.csv /tmp/scratch/```
+
+    #### *Why use /tmp?*
+     * Keeps your main directories clean and organized
+     * Prevents unnecessary files from being tracked in version control
+     * Supports reproducible, clutter-free workflows
 
 ---
 
