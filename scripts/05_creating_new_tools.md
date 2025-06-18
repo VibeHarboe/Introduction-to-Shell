@@ -279,6 +279,35 @@ done
 
 ---
 
+# 🛑 Debugging Shell Scripts: Handling Missing Filenames Like a Pro
+A common (and easy-to-make) mistake in both shell scripting and interactive data work is to forget to provide filenames to your commands. This is especially important when chaining commands in pipelines for automation or analysis.
+
+### 🌍 Real-World Data Scenario
+Suppose I'm batch-processing data files and I accidentally write this pipeline:
+
+```head -n 5 | tail -n 3 somefile.txt```
+
+#### **What actually happens?**
+
+   * ```tail -n 3``` happily prints the last three lines of ```somefile.txt```(if it exists).
+   * But ```head -n 5``` just waits for input from the keyboard — because I never told it what file to read!
+
+This sort of bug can easily occur in real-world automation scripts or when processing a series of files with loops.
+
+### 🧑‍💻 How I Fix This in Practice
+If a command hangs or waits for keyboard input, I always:
+   * Recognize the symptoms (no output, blinking cursor, command not finishing).
+   * Immediately press ```Ctrl + C``` to terminate the running process.
+
+#### **Why?**
+This is the fastest and safest way to regain control of the terminal, preventing accidental data entry or an endless wait.
+
+
+💡 *Knowing how to gracefully stop a stuck command is essential for robust data workflows and effective troubleshooting.*
+*As a data analyst automating data pipelines, I make Ctrl+C a core part of my troubleshooting toolkit—because time is too valuable to waste on hung processes!*
+
+---
+
 ## 🎯 Business Value & Automation
 * **Quality Assurance:** Instantly spot incomplete files or unexpected sizes before they break your pipeline.
 * **Reproducibility:** I (or any teammate) can generate the same summary every time, regardless of data updates.
