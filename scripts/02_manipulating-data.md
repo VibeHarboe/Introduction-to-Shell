@@ -26,7 +26,7 @@ less logs/pipeline.log
   * ```q:``` quit
 
 
-*If I want to review several files (for example, multiple job logs), I can open them all at once:*
+💡 *If I want to review several files (for example, multiple job logs), I can open them all at once:*
 
   ```less logs/job1.log logs/job2.log```
 
@@ -50,22 +50,27 @@ Before I load data into a pipeline or hand it off to stakeholders, I use head to
 
 If a file has fewer than 10 lines, head will just show what’s there — no errors or surprises.
 
-*When exploring unfamiliar datasets, this technique lets me quickly understand what fields are present and spot data quality issues before investing time in deeper analysis.*
+<br>
+
+💡 *When exploring unfamiliar datasets, this technique lets me quickly understand what fields are present and spot data quality issues before investing time in deeper analysis.*
 
 ---
 
 # 🚀 Speed Up Navigation with ```Tab``` Completion
 Efficiency is everything in data ops. Typing out long filenames is slow and error - prone—tab completion is my superpower for fast, accurate navigation.
 
-*Example:*
+#### *Example:*
 
   ```head sea[TAB]a[TAB]     # auto-completes to seasonal/autumn.csv```
 
   ```head sea[TAB]s[TAB]     # auto-completes to seasonal/spring.csv```
 
+
 If multiple files match, tap ```[TAB]``` again to see all options and pick the right one.
 
-*```Tab``` completion isn’t just for convenience — it prevents typos, speeds up navigation, and lets you focus on data insights instead of repetitive typing. 💡 Always leverage tab completion for faster, error-free work in the Shell!*
+<br>
+
+💡 *```Tab``` completion isn’t just for convenience — it prevents typos, speeds up navigation, and lets you focus on data insights instead of repetitive typing. Always leverage ```tab``` completion for faster, error-free work in the Shell!*
 
 ---
 
@@ -78,12 +83,15 @@ Want to see more or fewer lines? Just change the number:
 
 ```head -n 100 seasonal/summer.csv```
 
-*This is especially useful for QA, automation, and debugging data pipelines.*
+<br>
+
+💡 *This is especially useful for QA, automation, and debugging data pipelines.*
 
 ---
 
 # 🗂️ Recursively Audit Project Structure with ls ```-R```
-In real analytics projects, your data and scripts are rarely in a single folder. You’ll often need to see the full folder tree, including every subdirectory and file — especially when troubleshooting, sharing, or cleaning up after an analysis sprint.
+
+In real analytics projects, your data and scripts are rarely in a single folder.
 
   * ```-R``` stands for **recursive:** it will list all directories and subdirectories, showing every file at every level.
 
@@ -91,32 +99,51 @@ When I inherit a messy project or need a snapshot before archiving or sharing, I
 
 ```ls -R```
 
-*This outputs every file and subfolder — perfect for documentation, troubleshooting, or making sure my ETL outputs landed in the right place.*
+<br>
+
+💡 *This outputs every file and subfolder — perfect for documentation, troubleshooting, or making sure my ETL outputs landed in the right place.*
 
 ---
 
-# 📖 Get Help Instantly with man
-No more guessing what a command does —```man``` brings up the built-in manual, showing all available flags, usage, and examples.
+# 📖 Get Help Instantly with ```man```
+No more guessing what a command does — ```man``` brings up the built-in manual, including a one-line description, showing all available flags, usage, and examples.
 
-#### *Example:*
+### *Example:*
 
-```man tail```
+  * ```man tail```: This brings up the official manual page, including a one-line description, all supported flags, and concrete usage   examples.
 
-#### *Best practice:*
-Use ```man``` before copy-pasting code from Stack Overflow. Learn what each flag does and avoid nasty surprises in production.
+  * ```tail -n 7 seasonal/spring.csv```: This shows the last 7 lines of the specified file.
+
+<br>
+
+💡 *Use ```man``` before copy-pasting code from Stack Overflow. Learn what each flag does and avoid nasty surprises in production.*
 
 ---
 
-# ✂️ Select Columns Fast with cut
+# ✂️ Select Columns Fast with ```cut```
+
+The cut command is a simple, robust way to grab only the data you need without loading the entire file into a spreadsheet or Python script.
+
 For quick-and-dirty data wrangling (e.g., extracting just the timestamps or IDs), I use:
 
-```cut -d , -f 1 spring.csv```
+  ```cut -d , -f 1 spring.csv```
 
 This grabs the first column from a comma-separated file — great for simple transformations or piping into analytics scripts.
+<br>
 
-#### *Limitations:*
+### *Why this matters:*
+
+  * **Efficiency:** Instantly preview or extract just the needed fields, even from massive files.
+  * **Automation:** Integrate into batch processing or data-cleaning shell scripts.
+  * **Flexibility:** Supports a variety of delimiters (```-d```) and custom column selections (```-f```).
+
+### *Limitations:*
 
 ```cut``` can’t handle quoted strings or variable-length fields. For complex CSVs, I use ```awk```, ```csvkit```, or ```pandas```.
+
+<br>
+
+💡 *Use ```cut``` to streamline data wrangling before loading files into more complex analytics tools!*
 
 ---
 
@@ -126,25 +153,34 @@ Productivity hack:
   * ```history``` lists all recent commands
   * ```!N``` reruns the Nth command, ```!head``` reruns the last ```head```
 
-#### *Example:*
+### *Example:*
+   ```
+    head summer.csv         # Oops, wrong directory!
+    cd seasonal
+    !head                   # repeats the last head command
+    history                 # See all recent commands with line numbers
+    !4                      # Re-run the 4th command from the history
+   ```
 
- ```cd seasonal```
+<br>
 
- ```!head    # repeats the last head command```
+💡 *Combine with search (Ctrl+R) and editing to turn your shell into a powerful, error-free productivity tool.* 🚀
 
 ---
 
 # 🔎 Filter Rows with grep
 I use grep all the time to search, filter, or count lines matching a pattern — way faster than opening in Excel.
 
-  * **Show all** lines with "molar":
+  * **Show all** records containing the word "molar":
     ```grep molar seasonal/autumn.csv ```
 
-  * **Exclude** "molar" and show line numbers:
+  * **Exclude** the word "molar" lists every line (with it's number):
     ```grep -v -n molar seasonal/spring.csv ```
 
-  * **Count** "incisor" in multiple files:
+  * **Count** number of lines that contain the word "incisor", in multiple files:
     ```grep -c incisor seasonal/*.csv ```
+
+💡 *Chain ```grep``` with other shell tools (like ```cut``` or ```sort```) for even more powerful data wrangling on the fly!*
 
 ---
 
@@ -159,5 +195,4 @@ Shell tools treat data as plain text, not as true tables. This means things like
 
 ## *Bottom line:*
 *The Unix shell makes me faster, more reproducible, and more reliable as a data analyst. These techniques aren’t just for “toy” problems—they’re battle-tested in real data projects and make automation, troubleshooting, and reporting dramatically more effective.* 🚀
-
 
