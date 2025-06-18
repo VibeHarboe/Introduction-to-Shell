@@ -80,3 +80,31 @@ This approach makes it easy to scale your shell scripts to handle any number of 
 
 ---
 
+# 🌀 Automating Tasks Across Multiple Files with Shell Loops
+One of the core strengths of shell scripting is the ability to automate repetitive actions across entire directories—without ever needing to manually list filenames. In real-world data projects, this means massive time savings and fewer human errors.
+
+#### 🧲 Example scenario:
+Imagine I want to process every file in a directory, regardless of its extension, using a shell loop and a wildcard. Here’s how I do it:
+```
+for filename in people/*; do
+  echo $filename
+done
+```
+
+* The wildcard ```people/*``` expands to every file in the ```people``` directory.
+* The loop assigns each filename to the variable ```$filename```, one by one.
+* The ```echo $filename``` command then prints the name of each file (but in a real pipeline, this could just as easily be a data cleaning, conversion, or analysis command).
+
+#### 🏆 Terminal output:
+```people/agarwal.txt```
+
+*(…or however many files exist in your people/ directory)*
+
+### 🎯 Why this matters:
+This pattern lets me automate data processing pipelines and ensure consistent results across hundreds or thousands of files—perfect for real-world analytics and batch processing jobs.
+
+### 💡 Tip: 
+> Always use variables and wildcards in loops for maximum flexibility and automation!
+
+---
+
