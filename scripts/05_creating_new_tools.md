@@ -9,3 +9,7 @@ In my workflow as a data analyst, reusing and automating processes is key to eff
 * Showcasing practical automation for data cleaning, file management, and reporting
 
 Below, I present hands-on examples of how these scripting skills solve common data and workflow challenges.
+
+---
+
+# 
