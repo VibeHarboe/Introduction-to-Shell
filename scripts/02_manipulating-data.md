@@ -193,7 +193,7 @@ Shell tools treat data as plain text, not as true tables. This means things like
 
 ---
 
-# *Bottom line:*
+# 🎯 *Bottom line:*
 *The Unix shell makes me faster, more reproducible, and more reliable as a data analyst. These techniques aren’t just for “toy” problems—they’re battle-tested in real data projects and make automation, troubleshooting, and reporting dramatically more effective.* 🚀
 
 ---
