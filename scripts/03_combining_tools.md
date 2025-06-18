@@ -30,7 +30,7 @@ In real-world analytics projects, you often want to save results from the shell 
   * Ready for reporting, review, or as input to the next step in your pipeline.
 
 
-### *Why this matters:*
+### 💡 *Why this matters:*
   * **Automate data** hand-off between tools and teammates
   * Save **intermediate results** for debugging or documentation
   * **Build** repeatable, versioned **pipelines**
@@ -55,4 +55,20 @@ Extract lines 3–5 from a file and save for review.
 
 ---
 
+# 🧩 Combining Commands with Pipes
+Instead of cluttering your workspace with intermediate files, use pipes (```|```) to pass data between commands seamlessly.
+
+### *Example:*
+Extract all unique tooth types (except the header) from summer data:
+
+```cut -d , -f 2 seasonal/summer.csv | grep -v Tooth | sort | uniq```
+
+ * ```cut``` grabs column 2
+ * ```grep -v Tooth``` removes header
+ * ```sort | uniq``` deduplicates
+
+### 💡 *Business value:*
+One-liners like this mean less manual cleanup, more reproducible analytics, and much faster data exploration.
+
+---
 
