@@ -85,3 +85,62 @@ This runs the command and extracts all the date columns across my dataset – qu
 
 ---
 
+# 🔁 Re-using Pipes in Shell Scripts for Advanced Automation
+As a data analyst, repeatability and automation are key to delivering scalable analytics. One of the most powerful skills I use is embedding entire pipelines of shell commands directly into reusable scripts. This isn’t just about saving time—it's about making every data operation reproducible, shareable, and robust for production.
+
+### 🌍 Real-World Data Scenario
+Suppose I routinely need a summary report showing how often each unique tooth type appears across all seasonal dental CSV files. Instead of running several commands by hand (and risking typos or missing a file), I save the workflow as a script—ready to re-run anytime or share with my team.
+
+#### Example script: teeth.sh
+
+```cut -d , -f 2 seasonal/*.csv | grep -v Tooth | sort | uniq -c```
+
+
+### What This Script Does:
+* Extracts the second column (tooth names) from every CSV file in the seasonal/ directory.
+* Removes lines containing "Tooth" (the header).
+* Sorts all tooth names, so duplicates are grouped.
+* Counts occurrences of each unique tooth type with uniq -c.
+
+### 🏆 My Workflow in Practice
+* Run the script and save results:
+
+  ```bash teeth.sh > teeth.out```
+  
+* Review the results:
+
+  ```cat teeth.out```
+
+* Sample Output:
+
+  ```
+  15 bicuspid
+  31 canine
+  18 incisor
+  11 molar
+  17 wisdom
+   ```
+---
+
+## 🎯 Business Value & Automation
+* **Reproducibility:** I (or any teammate) can generate the same summary every time, regardless of data updates.
+* **Efficiency:** As new data arrives, I simply rerun the script — no manual edits required.
+* **Collaboration:** Colleagues use the same tool and get identical, reliable outputs — great for teamwork or onboarding.
+* **Auditability:** Every pipeline step is version-controlled, transparent, and easy to review for QA.
+
+---
+
+# 💡 *Bottom Line*
+*Saving and re-using pipelines in scripts is a superpower for analytics automation.
+It keeps workflows DRY (Don’t Repeat Yourself), ensures consistent results, and future-proofs every data project I deliver—whether for daily reporting, ad hoc analysis, or production batch jobs.*
+
+---
+
+## 🚀 Ready to see more? 
+
+Check out the full pipeline examples and code in my GitHub repo! [Vibes Repositories](https://github.com/VibeHarboe?tab=repositories)
+
+*(All examples here can be adapted for your own analytics, ETL, or reporting workflows.)*
+
+
+
