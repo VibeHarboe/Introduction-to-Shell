@@ -67,8 +67,84 @@ Extract all unique tooth types (except the header) from summer data:
  * ```grep -v Tooth``` removes header
  * ```sort | uniq``` deduplicates
 
-### 💡 *Business value:*
 One-liners like this mean less manual cleanup, more reproducible analytics, and much faster data exploration.
+
+
+### 💡 *Business value:*
+ * **Cleaner workflow:** Avoids creating temporary files like ```step1.csv```, ```step2.csv```, etc.
+ * **Readability:** Keeps the entire transformation in a single, readable line.
+ * **Performance:** Reduces disk I/O and clutter.
+   
+---
+
+
+# 🔢 Counting Records Fast with wc
+When dealing with batch files or big datasets, I use ```wc``` (word count) for a quick record tally:
+
+```wc -l seasonal/summer.csv```
+
+ * ```-l``` counts lines (i.e., records)
+
+### *Why use it?*
+ * **Instantly validate** file sizes before/after transformations
+ * **Automate sanity checks** in data pipelines
+
+---
+
+# 🌟 Working with Multiple Files: Wildcards
+Batch processing is a must in any real data project. Wildcards (```*```, ```?```, ```{}```) let me target multiple files without typos or missed cases.
+
+### *Example:*
+Preview the first 3 rows from all spring and summer CSVs:
+
+```head -n 3 seasonal/s*.csv```
+
+### 🚀 *Why Use Wildcards?*
+
+ * **Saves time:** No need to type each file name.
+ * **Prevents errors:** Avoids missing or duplicating files by mistake.
+ * **Scalable:** Works for any number of files — perfect for automation and scripting.
+
+<br>
+
+💡 *Master wildcards to DRY out your code and automate repetitive tasks across dozens (or hundreds) of files.*
+
+---
+
+## 🎯 Advanced Wildcards: Smart File Selection
+Match exactly the files you want—nothing more, nothing less.
+E.g., ```ls``` {```singh.pdf```,```j*.txt```} matches only ```singh.pdf``` and ```johel.txt—not``` — not files like ```sandhu.txt```
+
+### ⭐️ Common Wildcards for File Selection
+
+ * ```*``` (asterisk): Matches any number of characters (including none).
+   Example: ```*.csv``` matches all CSV files in the directory.
+ * ```?``` (question mark): Matches exactly one character.
+   Example: ```201?.txt``` matches ```2017.txt```, ```2018.txt``` but not ```2017-01.txt```.
+ * ```[abc]```: Matches a single character from the set.
+   Example: ```201[78].txt``` matches ```2017.txt``` and ```2018.txt```.
+ * ```{pattern1,pattern2}```: Matches any of the comma-separated patterns.
+ Example: ```{*.txt,*.csv}``` matches all ```.txt``` and ```.csv``` files.
+
+---
+
+# 🔀 Sorting Data in the Shell
+Sorting is crucial for QA, reporting, or prepping for downstream analysis.
+
+```cut -d , -f 2 seasonal/winter.csv | grep -v Tooth | sort -r```
+
+* Get all tooth types in reverse (descending) order.
+
+### *Example:*
+ > The ```sort``` command has useful flags:
+ * ```-n``` for numerical sort
+ * ```-r``` for reverse order
+ * ```-b``` to ignore leading blanks
+ * ```-f``` for case-insensitive sorting
+
+<br>
+
+💡 *Combine with ```uniq``` for unique values, or add ```head/tail``` for the top/bottom -N (value).*
 
 ---
 
