@@ -122,6 +122,77 @@ Suppose I routinely need a summary report showing how often each unique tooth ty
    ```
 ---
 
+# 📦 Passing Filenames to Scripts for Scalable, Automated Data Processing
+One of the game-changers in my workflow as a data analyst is building shell scripts that can flexibly process any number of data files—not just hardcoded examples. This is where the power of parameterized scripts truly shines in the Unix shell.
+
+### 🌍 Real-World Scenario: Making Analytics Tools Reusable
+In practice, my datasets and batch-processing needs are always changing—sometimes I’m working with a handful of files, sometimes with hundreds. Instead of rewriting or duplicating scripts for every scenario, I use the special shell variable $@ to create scripts that dynamically accept all filenames given on the command line.
+
+#### Example: Making Data Summaries Modular
+Let’s say I want to count the number of lines (i.e., records) in any set of CSV files. Instead of editing my script every time, I use $@ so my script works with whatever files I specify:
+
+**count-records.sh**
+```wc -l $@```
+
+Now I can run:
+
+```bash count-records.sh seasonal/summer.csv seasonal/autumn.csv```
+
+…and the script will output line counts for both files.
+
+**Or, for a whole folder:**
+
+```bash count-records.sh seasonal/*.csv```
+
+My script now instantly processes all CSVs in the directory—without a single line of code changed.
+
+---
+
+💡 *Designing scripts to accept filenames as arguments is an essential skill for scalable, maintainable data automation. It keeps my workflow flexible, professional, and ready for both ad hoc analyses and production pipelines—no matter how data volumes or requirements evolve.*
+
+---
+
+# 🚀 Passing Filenames to Shell Scripts: Making My Automation Truly Dynamic
+One of the best ways to scale and generalize my data workflows is by writing shell scripts that can process any files I specify—without editing the script every time. Instead of hardcoding filenames, I use special shell parameters to make my scripts flexible, reusable, and production-ready.
+
+### 🌍 Real-World Automation Scenario
+Imagine I want to count the number of lines (records) in one or more seasonal CSV data files. Instead of making a separate script for each dataset, I use the ```$@``` parameter in my shell scripts to accept any list of files as arguments.
+
+#### Example script (```count-records.sh```):
+
+```wc -l $@```
+
+   * ```$@``` automatically expands to all filenames I pass when I run the script.
+   * Now I can analyze a single file or a hundred—just by adding them to the command line.
+
+### **How I use this pattern in my workflow:**
+
+**1. Edit the script:**
+   In Nano (or any editor), I add wc -l $@ and save as count-records.sh.
+
+**2. Run the script on multiple files:**
+
+   ```bash count-records.sh seasonal/*.csv > num-records.out```
+
+   * This counts records in every seasonal CSV, outputting the result to num-records.out.
+
+**3. Inspect results:**
+
+   ```cat num-records.out```
+
+#### Example output:
+
+```
+21 seasonal/autumn.csv
+24 seasonal/spring.csv
+25 seasonal/summer.csv
+26 seasonal/winter.csv
+```
+
+💡 *By designing my shell scripts to accept filenames as arguments (using ```$@```), I keep my automation workflows modular, efficient, and ready for any dataset. This is a foundational skill for any data analyst or engineer working with batch data processing, pipeline automation, or reproducible analytics.*
+
+---
+
 ## 🎯 Business Value & Automation
 * **Reproducibility:** I (or any teammate) can generate the same summary every time, regardless of data updates.
 * **Efficiency:** As new data arrives, I simply rerun the script — no manual edits required.
