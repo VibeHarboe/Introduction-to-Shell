@@ -108,3 +108,37 @@ This pattern lets me automate data processing pipelines and ensure consistent re
 
 ---
 
+# 🗂️ Efficient File Handling with Shell Variables & Wildcards
+Working with large datasets often means managing many files at once. To avoid repetitive typing and minimize errors, I use shell variables in combination with wildcards. Here’s how I do it in practice:
+
+### 🌏 Real-world Task
+Suppose I want to quickly store and process all seasonal CSV files in a project. I assign all filenames to a variable using a wildcard:
+
+```files=seasonal/*.csv```
+
+This expands instantly to include all relevant files, no matter how many are present.
+
+### Looping Through Files Like a Pro
+With the variable set, I can process each file in a loop—printing, analyzing, or transforming the data as needed. For example, to print all filenames:
+
+```
+for f in $files; do
+    echo $f
+done
+```
+
+#### **Output:**
+```
+seasonal/autumn.csv  
+seasonal/spring.csv  
+seasonal/summer.csv  
+seasonal/winter.csv
+```
+
+This approach ensures that even as the file list changes, my scripts remain robust and flexible. No manual updates required!
+
+### 🏆 Key takeaway:
+Using variables and wildcards together is an essential automation trick in data engineering and shell scripting. It keeps code concise, maintainable, and ready for scale. 🚀
+
+---
+
