@@ -12,4 +12,33 @@ Below, I present hands-on examples of how these scripting skills solve common da
 
 ---
 
-# 
+# 📝 Editing a File with Nano 
+
+### 🌏 Real-world scenario:
+Whenever I need to create or update a quick configuration file, document, or data list directly on a server or in a project, I reach for the Nano editor. It’s lightweight, always available, and easy to use—perfect for batch scripting or quick fixes.
+
+#### 💡 Step-by-step:
+
+**1. Open (or create) a new file for editing:**
+   ```nano names.txt```
+
+**2. Use these common Nano keyboard shortcuts:**
+
+   * ```Ctrl + K``` : Delete a line
+   * ```Ctrl + U``` : Un-delete a line
+   * ```Ctrl + O``` : Save the file (press Enter to confirm the filename)
+   * ```Ctrl + X``` : Exit Nano
+
+**3. Example file content for a team list or demo data:**
+```
+Lovelace
+Hopper
+Johnson
+Wilson
+```
+
+**4. Save and exit as shown above.**
+This approach keeps my shell workflow fast and flexible, without ever leaving the terminal.
+
+---
+
