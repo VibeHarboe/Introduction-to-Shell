@@ -55,9 +55,33 @@ This command grabs the last three lines from your shell history and saves them i
 #### Typical workflow:
 * ```history``` prints the full list of previously executed commands.
 * ```tail -n 10``` extracts the 10 most recent commands.
-* ```> figure-5.history```redirects the output into a file for future reference.
+* ```> figure-5.history``` redirects the output into a file for future reference.
 
 This simple pipeline ensures I never miss a step and that my processes are fully reproducible. This approach demonstrates a key Unix philosophy: combining small, powerful tools to create efficient, auditable workflows.
 
 ### 💡 Tip: 
 > *Regularly exporting your shell history helps maintain a transparent, shareable record of your data analyses and automation tasks!*
+
+---
+
+# 🚀 Save and Re-Run Commands Automatically: Creating and Using Shell Scripts
+One of the key skills in professional shell work is automating tasks by saving your commands into scripts. Instead of typing complex or repetitive commands again and again, I create .sh files to store my command sequences. This lets me re-run them reliably, share them with others, and keep my analyses reproducible.
+
+### 🌏 Real-world example:
+Suppose I want to extract the first column from every CSV file in my seasonal directory. Instead of running the command manually each time, I save it in a file named dates.sh:
+
+```cut -d , -f 1 seasonal/*.csv```
+
+I then execute the script with:
+
+```bash dates.sh```
+
+This runs the command and extracts all the date columns across my dataset – quickly, repeatably, and with a single command. This is not just a time saver: it's the foundation for building robust, automated data pipelines in Unix.
+
+### 🎯 Why this matters:
+* Reproducibility: Anyone can re-run my workflow exactly as I did.
+* Documentation: My scripts serve as living documentation for my analysis process.
+* Scalability: I can chain scripts, schedule them, or plug them into larger automation frameworks.
+
+---
+
