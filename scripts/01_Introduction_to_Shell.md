@@ -95,14 +95,14 @@ Organizing large code and data projects means:
 
 ---
 
-## Bottom line:
+# 🎯 Bottom line:
 *If you want to work efficiently as a modern data analyst, combine the flexibility of the shell with the clarity of graphical tools. Most importantly, automate everything you can!* 🚀
 
 *Showcasing these Unix shell skills in my GitHub portfolio demonstrates my ability to manage complex, real-world data workflows—delivering results faster, more reliably, and with fewer errors.*
 
 ---
 
-# Ready to see more? 🚀 
+## 🚀 *Ready to see more?* 
 
 Check out the full pipeline examples and code in my GitHub repo! [Vibes Repositories](https://github.com/VibeHarboe?tab=repositories)
 
