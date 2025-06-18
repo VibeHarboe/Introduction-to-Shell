@@ -203,3 +203,11 @@ Suppose I need to quickly spot which seasonal data file has the fewest rows (for
 
 ## *Bottom line:*
 *The Unix shell—especially when you start combining commands—lets me build robust, transparent, and repeatable data workflows that scale from ad hoc exploration to production analytics.*
+
+---
+
+# Ready to see more? 🚀 
+
+Check out the full pipeline examples and code in my GitHub repo! [Vibes Repositories](https://github.com/VibeHarboe?tab=repositories)
+
+*(All examples here can be adapted for your own analytics, ETL, or reporting workflows.)*
