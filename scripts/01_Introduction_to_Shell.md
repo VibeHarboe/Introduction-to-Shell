@@ -15,10 +15,12 @@ In my daily analytics work, I rely on shell commands to:
   * Manage, back up, or rename files with version control (```cp```, ```mv```, ```rm```)
   * Automate pipelines for ETL and reporting
 
+*Knowing both gives you flexibility. You can automate, batch process, and script operations in a way that GUIs can’t – crucial for data pipelines.*
+
 ---
 
 # 📂 Staying Oriented in Large Projects
-Before launching batch scripts or editing data, I *always* check my location using: 
+Before launching batch scripts or editing data, I *always* check my location using: https://github.com/VibeHarboe/Introduction-to-Shell/blob/main/scripts/01_Introduction_to_Shell.md
 
 ```pwd```
 
@@ -31,7 +33,9 @@ Quickly seeing which files are present is critical when validating ETL jobs or p
 
 ```ls /home/user/data/```
 
-This simple step has saved me countless hours troubleshooting broken scripts due to missing files or naming mismatches.
+In Bash scripting, combining ```ls``` with conditionals lets you automate file validation as part of your ETL/data pipeline setup.
+
+*This simple step has saved me countless hours troubleshooting broken scripts due to missing files or naming mismatches.*
 
 ---
 
