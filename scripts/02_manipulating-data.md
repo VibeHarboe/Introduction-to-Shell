@@ -1,6 +1,6 @@
 # 🗃️ Introduction to Shell: Manipulating Data
 
-# Why This Matters as a Data Analyst
+### Why This Matters as a Data Analyst
 As a data analyst, much of my day is spent wrangling, exploring, and validating raw data. The Unix shell isn’t just an old-school tool—it’s an essential part of any serious analytics workflow. This chapter demonstrates how I use the shell’s built-in commands to search, filter, preview, and transform data files—making my pipelines faster, more reproducible, and scalable.
 
 ---
@@ -25,13 +25,21 @@ less logs/pipeline.log
   * ```/text```: search for "text"
   * ```q:``` quit
 
+
+*If I want to review several files (for example, multiple job logs), I can open them all at once:*
+
+  ```less logs/job1.log logs/job2.log```
+
+  * Type ```:n``` to go to the next file,
+  * Type ```:p``` to return to the previous file.
+  
 ### *Why this matters:*
 
 It’s much faster than opening big files in a GUI, especially on servers or in automated workflows.
 
 ---
 
-# 👀 Preview Data with head
+# 👀 Preview Data with ```head```
 Before I load data into a pipeline or hand it off to stakeholders, I use head to preview the top rows and ensure everything looks as expected:
 
   ```head seasonal/summer.csv```
@@ -42,9 +50,11 @@ Before I load data into a pipeline or hand it off to stakeholders, I use head to
 
 If a file has fewer than 10 lines, head will just show what’s there — no errors or surprises.
 
+*When exploring unfamiliar datasets, this technique lets me quickly understand what fields are present and spot data quality issues before investing time in deeper analysis.*
+
 ---
 
-# 🚀 Speed Up Navigation with Tab Completion
+# 🚀 Speed Up Navigation with ```Tab``` Completion
 Efficiency is everything in data ops. Typing out long filenames is slow and error - prone—tab completion is my superpower for fast, accurate navigation.
 
 *Example:*
@@ -54,6 +64,8 @@ Efficiency is everything in data ops. Typing out long filenames is slow and erro
   ```head sea[TAB]s[TAB]     # auto-completes to seasonal/spring.csv```
 
 If multiple files match, tap ```[TAB]``` again to see all options and pick the right one.
+
+*```Tab``` completion isn’t just for convenience — it prevents typos, speeds up navigation, and lets you focus on data insights instead of repetitive typing. 💡 Always leverage tab completion for faster, error-free work in the Shell!*
 
 ---
 
@@ -67,6 +79,19 @@ Want to see more or fewer lines? Just change the number:
 ```head -n 100 seasonal/summer.csv```
 
 *This is especially useful for QA, automation, and debugging data pipelines.*
+
+---
+
+# 🗂️ Recursively Audit Project Structure with ls ```-R```
+In real analytics projects, your data and scripts are rarely in a single folder. You’ll often need to see the full folder tree, including every subdirectory and file — especially when troubleshooting, sharing, or cleaning up after an analysis sprint.
+
+  * ```-R``` stands for **recursive:** it will list all directories and subdirectories, showing every file at every level.
+
+When I inherit a messy project or need a snapshot before archiving or sharing, I use recursive listing:
+
+```ls -R```
+
+*This outputs every file and subfolder — perfect for documentation, troubleshooting, or making sure my ETL outputs landed in the right place.*
 
 ---
 
