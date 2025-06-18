@@ -20,11 +20,11 @@ In my daily analytics work, I rely on shell commands to:
 ---
 
 # 📂 Staying Oriented in Large Projects
-Before launching batch scripts or editing data, I *always* check my location using: https://github.com/VibeHarboe/Introduction-to-Shell/blob/main/scripts/01_Introduction_to_Shell.md
+Before launching batch scripts or editing data, I *always* check my location using:
 
 ```pwd```
 
-This prevents errors like overwriting or deleting the wrong files — crucial when working on production systems or collaborating in teams.
+*This prevents errors like overwriting or deleting the wrong files — crucial when working on production systems or collaborating in teams.*
 
 ---
 
