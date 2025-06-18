@@ -148,3 +148,58 @@ Sorting is crucial for QA, reporting, or prepping for downstream analysis.
 
 ---
 
+# 🔄 Removing Duplicates with ```sort | uniq```
+Clean, deduplicated data is vital for analysis and reporting.
+Combine ```sort``` (to group) and ```uniq -c``` (to count unique):
+
+```cut -d , -f 2 seasonal/winter.csv | grep -v Tooth | sort | uniq -c```
+
+### *Examples:*
+1. ```cut -d , -f 2 seasonal/winter.csv```
+   → Extracts the second column (tooth names) from the CSV.
+2. ```grep -v Tooth```
+   → Removes the header line containing the word "Tooth".
+3. ```sort```
+   → Sorts the tooth names alphabetically, grouping duplicates together.
+4. ```uniq -c```
+   → Removes adjacent duplicates and prints a count of each unique tooth type.
+
+💡 *```uniq``` only removes adjacent duplicate lines. That's why sorting is crucial before using ```uniq```, to make sure identical entries are grouped together.*
+
+---
+
+# 💾 Saving Pipeline Output
+Place your redirection (```>```) at the end of the pipeline—never in the middle or front.
+
+✅ Correct:
+
+```cut -d , -f 2 seasonal/*.csv | grep -v Tooth > teeth-only.txt```
+
+❌ Incorrect:
+
+```cut -d , -f 2 seasonal/*.csv > teeth-only.txt | grep -v Tooth     # Won't work as expected!```
+
+---
+
+# ⏹️ Stopping Long-Running Commands
+Sometimes, shell commands hang or run too long. Use ```Ctrl + C``` (```^C```) to kill the current process without closing your terminal — essential for troubleshooting in live data ops.
+
+---
+
+# 🚦 Wrapping Up: Real QA—Find the Shortest File
+Suppose I need to quickly spot which seasonal data file has the fewest rows (for QA or merging):
+
+```wc -l seasonal/*.csv | grep -v total | sort -n | head -n 1```
+
+* Gets **record counts** for all files
+* **Removes** the “total” row
+* **Sorts by** record count
+* **Returns** the shortest file
+
+### *Result:*
+💡 *A single command for a common analyst question — production-ready and automation-friendly. 😎*
+
+---
+
+## *Bottom line:*
+*The Unix shell—especially when you start combining commands—lets me build robust, transparent, and repeatable data workflows that scale from ad hoc exploration to production analytics.*
