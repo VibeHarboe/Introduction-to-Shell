@@ -210,3 +210,34 @@ done
 
 ---
 
+# 🚫 Why You Should Avoid Spaces in Filenames (Showcasing Unix Shell Best Practices)
+When working in the shell, using spaces in filenames can cause serious headaches — even if it feels natural when naming files in a graphical interface. Here’s why:
+
+### 🌏 Real-World Scenario
+Suppose you want to rename ```July 2017.csv``` to ```2017 July data.csv``` with a simple ```mv command```. If you type:
+
+```mv July 2017.csv 2017 July data.csv```
+
+…the shell interprets this as four separate items (```July```, ```2017.csv```, ```2017```, ```July```) to move, and a directory called ```data.csv``` — not as two filenames. This leads to errors or unexpected behavior.
+
+#### ✅ Correct Approach:
+You must quote filenames with spaces:
+
+```mv 'July 2017.csv' '2017 July data.csv'```
+
+#### ❌ Hidden Pitfalls: Deleting Files with Spaces
+If you try to delete files named ```current.csv``` and ```last year.csv``` by running:
+
+```rm current.csv last year.csv```
+
+…the shell interprets this as three files: ```current.csv```, ```last```, and ```year.csv```. If last and ```year.csv``` do not exist, you get error messages, but ```current.csv``` will be deleted — possibly not what you intended.
+
+### 📍 What Actually Happens?
+* The shell prints error messages because ```last``` and ```year.csv``` do not exist.
+* It deletes ```current.csv```.
+
+### Showcasing my Unix Shell skills:
+When writing scripts or processing files in the shell, I always use underscores or hyphens instead of spaces. This ensures reliable automation, makes scripting easier, and avoids accidental data loss or cryptic errors.
+
+### 💡 Tip: 
+> *Always quote your filenames when in doubt!*
