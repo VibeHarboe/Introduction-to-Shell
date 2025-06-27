@@ -91,3 +91,6 @@ Shell excels at pre-processing, but the real magic is when you combine it with P
 ## 🚀 Bottom Line
 Shell scripting supercharges your analytics by turning repetitive, error-prone chores into robust, automated workflows.
 Every hour you invest in workflow automation pays off with faster, cleaner, and more reliable results.
+
+
+> See my other guides in /docs for even more real-world shell techniques!
