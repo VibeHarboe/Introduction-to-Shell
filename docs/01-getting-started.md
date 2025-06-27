@@ -34,14 +34,10 @@ Each section in docs/ is designed to build your real-world shell skills step-by-
 * Practical mini-guides for advanced automation
 * FAQ & troubleshooting—answers from actual data projects
 
+<br>
+
 All code examples are taken directly from my own data analytics training and project work.
 
-> Feel free to copy, adapt, or extend them for your own portfolio or production work!
+> *Feel free to copy, adapt, or extend them for your own portfolio or production work!*
 
----
-
-Ready to boost your analytics game?
-➡️ Move on to 02-real-world-workflows.md for hands-on use cases, or browse the scripts/ folder for executable examples!
-
----
-
+<br>
