@@ -31,7 +31,7 @@ The goal is to demonstrate how shell scripting enhances my ability to preprocess
 ├── visuals/ # Diagrams, screenshots, and flowcharts
 └── README.md # Repository overview (this file)
 ```
-
+```
 docs/
 ├── 01-getting-started.md
 ├── 02-common-workflows.md
@@ -42,7 +42,7 @@ docs/
 ├── 07-best-practices.md
 ├── 08-references.md
 └── images/
-
+```
 
 ---
 
