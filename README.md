@@ -21,14 +21,18 @@ The goal is to demonstrate how shell scripting enhances my ability to preprocess
 ```
 ├── scripts/ # Shell scripts and command-line solutions
 ├── docs/ # Conceptual guides and chapter notes
-│ ├── manipulating-files.md
-│ ├── manipulating-data.md
-│ ├── combining-tools.md
-│ ├── batch-processing.md
-│ └── creating-new-tools.md
-├── examples/ # Real-world scenarios and walkthroughs
-├── data/ # Sample datasets or input files (if permitted)
-├── visuals/ # Diagrams, screenshots, and flowcharts
+│   ├── 01-getting-started.md
+│   ├── 01-getting-started_copy.md
+│   ├── 02-common-workflows.md
+│   ├── 03-automation-patterns.md
+│   └── README.md
+├── scripts/ # Shell scripting walkthroughs and command examples
+│   ├── 01_Introduction_to_Shell.md
+│   ├── 02_manipulating-data.md
+│   ├── 03_combining_tools.md
+│   ├── 04_Batch_Processing_and_Automation.md
+│   └── 05_creating_new_tools.md
+├── LICENSE
 └── README.md # Repository overview (this file)
 ```
 
