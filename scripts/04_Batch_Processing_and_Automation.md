@@ -98,7 +98,7 @@ Need to extract all July 2017 records from every CSV? Do it in one loop:
 
 ```
 for file in seasonal/*.csv; do
-  grep 2017-07 "$file" | tail -n 1
+  grep 2017-07 "$file"
 done
 ```
 
