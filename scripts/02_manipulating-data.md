@@ -57,7 +57,7 @@ If a file has fewer than 10 lines, head will just show what’s there — no err
 ---
 
 # 🚀 Speed Up Navigation with ```Tab``` Completion
-Efficiency is everything in data ops. Typing out long filenames is slow and error - prone—tab completion is my superpower for fast, accurate navigation.
+Efficiency is everything in data ops. Typing out long filenames is slow and error-prone—tab completion is my superpower for fast, accurate navigation.
 
 #### *Example:*
 
